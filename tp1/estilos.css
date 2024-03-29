@@ -1,0 +1,268 @@
+/* I */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+body{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url("https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/* Headder*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top:20px;
+    padding-left: 5%;
+    padding-right:5px ;
+    font-weight: bold;
+}
+.Tp1{
+    color: white;
+    font-size: 45px;
+}
+ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color:rgb(0, 0, 0)
+
+}
+/* Foto y nombre Inicio(headder)*/
+.Perfil{
+    border-radius: 50px;
+    margin: 0px auto;
+    margin-left:100px;
+    margin-right:100px;
+    height:300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.ImgYo{
+    position: relative;
+    border-radius: 50%;
+    left:200px;
+    width: 35%;
+}
+.nombrePerfil{
+    position: relative;
+    right:15%;
+    font-size:40px;
+    white-space: nowrap;
+}
+
+/* (main), Sobre Mi */
+main.Inicio{
+    border: 2px solid #00000011;
+    background-color:#0000000e ;
+    backdrop-filter: blur(0.4rem);
+    border-radius:5%;
+    float: left;
+    width: calc(100% - 640px);
+    margin-left:100px;
+    margin-top:10px;
+    min-height: calc(76vh - 60px);
+}
+.Press{
+    margin: 0px auto;
+    margin-top: 2%;
+    margin-right:20px;
+    margin-left:20px ;
+
+}
+.Info{
+    margin: 0px auto;
+    margin-top: 2%;
+    margin-right:20px;
+    margin-left:20px ;
+    border-top: solid 2px;
+
+}
+.aspiraciones{
+    border-top: solid 2px;
+    margin: 0px auto;
+    margin-top: 2%;
+    margin-right:20px;
+    margin-left:20px ;
+}
+hr{
+    margin-top:2%;
+}
+#sobre-mi{
+    font-size:30px;
+    text-align: center;
+    margin-block:15px;
+}
+/* (aside) Amigos+ tecnologias*/
+aside{
+    border-radius:5%;
+    border: 2px solid #00000011;;
+    background-color:#504c4c0e ;
+    backdrop-filter: blur(0.3rem);
+    float: right;
+    width: 430px;
+    margin-right:100px;
+    margin-top:10px;
+}
+.amigos{
+    margin:20px;
+}
+.NAmigos{
+    font-size:30px;
+    text-align: center;
+    margin-block:15px;
+}
+.tecnicas{
+    margin:20px;
+    font-size:30px;
+    text-align: center;
+    margin-block:15px;
+}
+.TNombre{
+    font-size:30px;
+    text-align: center;
+    margin-block:15px;
+}
+/* Animacion en nombre*/
+.nombrePerfil {
+    background-image: linear-gradient(120deg, #ED4264,#FFEDBC 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.1em;
+    background-position: 0 80%;
+    transition: background-size 0.25s ease-in;
+}
+
+.nombrePerfil:hover {
+    background-size: 100% 88% !important;
+}
+/* (pag2) Materias*/
+.tabla{
+    margin: 0 auto;
+            font-size: 14px;
+            max-width: 600px;
+            border: 2px solid #00000011;
+            background-color:#0000000e ;
+            backdrop-filter: blur(0.4rem);
+}
+table{
+    color:#000000;
+    font-size: 2px;
+    table-layout:fixed;
+    border-collapse: collapse;
+}
+thead{
+    background:rgba(243, 140, 210, 0.4);
+}
+th{
+    padding: 10px 10px;
+    font-weight:300 ;
+    text-transform: uppercase;
+}
+td{
+    padding: 10px;
+    border-bottom: solid 1px rgba(255,255,2555, 0.2) ;
+}
+tbody tr:hover{
+    background-color:rgba(243, 140, 210, 0.4);
+
+}
+.Materias{
+    border: 2px solid #00000011;
+    background-color:#0000000e ;
+    backdrop-filter: blur(0.4rem);
+    float:left;
+    margin: 0px auto;
+    margin-left:100px;
+    margin-top:10px;
+}
+/* Div + footer */
+footer{
+    color: #fff;
+        width: 100%; /* Opcional: Para que el contenido abajo tenga el ancho completo */
+        clear: both; /* Para que no flote y se coloque debajo */
+        background-color: #000000;
+        padding: 20px;
+}
+.social{
+    text-align: center;
+}
+.Hsocial{
+    font-size: 25PX;
+    text-align: center;
+}
+.Fsocial{
+        font-size: 25PX;
+        text-align: center;
+}
+/* Estilos para pantallas de tamaño pequeño (por ejemplo, teléfonos móviles) */
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nombrePerfil {
+        text-align: center;
+        margin: 10px auto;
+    }
+    .Perfil {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ImgYo {
+        width: 50%;
+        margin: 20px auto;
+    }
+    main.Inicio {
+        width: 90%;
+        margin: 10px auto;
+        margin-left: 0;
+    }
+    aside {
+        width: 90%;
+        margin: 10px auto;
+        margin-right: 0;
+    }
+    .logosT img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Estilos para pantallas de tamaño mediano (por ejemplo, tabletas) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .nombrePerfil {
+        text-align: center;
+    }
+    .Perfil {
+        justify-content: center;
+    }
+}
+
+/* Estilos para pantallas de tamaño grande (por ejemplo, computadoras de escritorio) */
+@media only screen and (min-width: 1025px) {
+    .Perfil {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    main.Inicio {
+        margin-left: 100px;
+    }
+    aside {
+        margin-right: 100px;
+    }
+}
+
+
