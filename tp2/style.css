@@ -1,0 +1,116 @@
+
+body{
+    background-color: black;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+body, .svg-container, .container-main {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.main {
+    overflow: hidden;
+}
+
+.custom-svg {
+    fill: #fdf;
+    width: 300%;
+    height: 280px;
+    transform: rotate(180deg);
+}
+.container-main{
+    margin-top: -1px;
+    background-color: #fdf;
+    color: black;
+    margin-bottom: 0px;
+}
+#arreglo{
+    list-style: none;
+    background-color: #fdf;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 35px;
+    border-radius: 50px;
+    border-style: none;
+}
+#arreglo :hover{
+    color:rgb(196, 29, 126) ;
+}
+.headder{
+    color: #fdf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 200px;
+}
+.headder h1{
+        font-size: 70px;
+        background-image: linear-gradient(120deg, #ec008c,#fc6767 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.1em;
+        background-position: 0 100%;
+        transition: background-size 0.25s ease-in;
+}
+.headder h1:hover {
+        background-size: 100% 88% !important;
+}
+
+.head h2{
+    font-size: 18px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cuadro{
+    padding-bottom: 30px ;
+    margin:  20px auto;
+    border: solid 3px #99616c44;
+    width: 60%;
+    text-align: center;
+    box-shadow:
+    0.1px 1px 1.2px rgba(0, 0, 0, 0.04),
+    0.1px 2.1px 2.7px rgba(0, 0, 0, 0.059),
+    0.2px 3.6px 4.6px rgba(0, 0, 0, 0.073),
+    0.3px 5.4px 6.9px rgba(0, 0, 0, 0.084),
+    0.5px 7.8px 10px rgba(0, 0, 0, 0.095),
+    0.7px 11px 14.2px rgba(0, 0, 0, 0.106),
+    1px 15.6px 20.1px rgba(0, 0, 0, 0.117),
+    1.5px 22.6px 29.2px rgba(0, 0, 0, 0.131),
+    2.3px 34.9px 45px rgba(0, 0, 0, 0.15),
+    4px 62px 80px rgba(0, 0, 0, 0.19);
+}
+.div3,
+.div2 p {
+    color: #99616c;
+}
+.div2 span{
+    color:black;
+    font-weight: bold;
+}
+.div3 span{
+    color: black;
+    font-weight: bold;
+}
+
+.div4,
+.div5 div{
+    color: #99616c;
+}
+hr{
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+.tittle-cuadro{
+    text-align: center;
+}
