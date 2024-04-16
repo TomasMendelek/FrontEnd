@@ -64,9 +64,46 @@ ordenarElement.innerHTML = "El orden de mayor a menor es: <span style='font-weig
 list.sort((a, b) => b - a);
 var ordenarElement = document.getElementById("mayorMenor");
 ordenarElement.innerHTML = "El orden de mayor a menor es: <span style='font-weight: bold; color:black;' >[" + list.join(", ") + "]</span>";
-
-
+//mostrar promedios en la consola
 console.log(list)
 
+//Calculo de promedio de las notas
+document.addEventListener("DOMContentLoaded", function() {
+var form = document.querySelector('.form form');
+form.addEventListener('submit', function(event) {
+event.preventDefault();
 
+// Obtiene los valores de los campos
+var nombre = form.querySelector('input[name="nombre"]').value.trim();
+var email = form.querySelector('input[name="email"]').value.trim();
+var legajo = form.querySelector('input[name="legajo"]').value.trim();
+var notas = Array.from(form.querySelectorAll('input[name="nota"]')).map(input => input.value.trim());
 
+// Validar campos vacíos
+if (nombre === '' || email === '' || legajo === '' || notas.some(nota => nota === '')) {
+    alert('Por favor, completa todos los campos.');
+    return;
+}
+
+//valida los datos validos de las notas
+var notaInvalida = notas.find(nota => isNaN(parseInt(nota)));
+if (notaInvalida !== undefined) {
+    alert('Por favor, introduce solo números en los campos de notas.');
+    return;
+}
+
+// Validar formato de email
+var emailcorrecto = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailcorrecto.test(email)) {
+    alert('Por favor, introduce un email válido.');
+    return;
+}
+
+// Calcular el promedio de las notas
+var total = notas.reduce((acc, nota) => acc + parseFloat(nota), 0);
+var promedio = total / notas.length;
+
+// Muestra el resultado del promedio
+var resultadoPromedio = form.querySelector('#resultadoPromedio');
+resultadoPromedio.textContent = "El promedio es: " + promedio.toFixed(2);});
+});
