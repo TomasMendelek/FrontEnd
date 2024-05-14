@@ -1,0 +1,44 @@
+.contenedor{
+    margin:20px auto;
+    background-color: var(--tercero);
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    border-radius: 50px;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.fotoNombre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.foto{
+    width: 250px;
+    border-radius: 50px;
+    border: var(--primario) solid 5px;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+img{
+    width: 45px;
+    margin: 0 5px;
+}
+
+h4{
+    color: var(--secundario);
+}
+h2{
+    font-size: 36px;
+}
+

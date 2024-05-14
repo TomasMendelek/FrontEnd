@@ -1,0 +1,15 @@
+.button1{
+    width: 200px;
+    font-size: 24px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    border-color: var(--primario);
+    border-radius: 40px;
+}
+
+b{
+    color: white;
+}
+.b1{
+    color: var(--primario);
+}

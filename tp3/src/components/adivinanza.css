@@ -1,0 +1,21 @@
+.inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    padding: 50px;
+}
+
+.adivinar{
+    background-color:var(--secundario);
+    border: none;
+    width: 50px;
+    font-size: 24px;
+}
+
+.h4{
+    margin: 1px 20px;
+    width: 350px;
+}
+

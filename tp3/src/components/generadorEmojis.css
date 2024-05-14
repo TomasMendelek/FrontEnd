@@ -1,0 +1,23 @@
+section{
+    text-align: center;
+}
+.select-emoji{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    padding: 50px;
+}
+
+
+
+.boton2{
+    width: 100px;
+    height: 50px;
+    font-size: 24px;
+    background-color: var(--fondo);
+    color: var(--texto);
+    border-color: var(--primario);
+    border-radius: 40px;
+}
