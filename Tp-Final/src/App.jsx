@@ -1,11 +1,14 @@
-import React from 'react'
-import { Button } from "@mui/material"
+
+import { NavDrawer } from "./components/navbar/NavDrawer"
+import { Navbar } from "./components/navbar/Navbar"
+
+
 
 export const App = () => {
   return (
     <>
-    <h1>App</h1>
-    <Button variant='contained'>Mi Primer boton</Button>
+      <Navbar />
+      <NavDrawer />
     </>
   )
 }
