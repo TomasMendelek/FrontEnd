@@ -1,8 +1,7 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { AddTask } from "./AddTask";
 import { TodoForm } from "./TodoForm";
 import { useState } from "react";
-
 
 
 export const Todo = ({ drawerOpen }) => {
@@ -16,6 +15,7 @@ export const Todo = ({ drawerOpen }) => {
 
 
   return (
+    <Container maxWidth="xl">
     <Box sx={{
       flexGrow: 1,
       transition: 'margin 0.3s',
@@ -25,5 +25,6 @@ export const Todo = ({ drawerOpen }) => {
         <AddTask onAdd={addTask}></AddTask>
         <TodoForm tasks={tasks} setTasks={setTasks}></TodoForm>
     </Box>
+    </Container>
   );
 };
