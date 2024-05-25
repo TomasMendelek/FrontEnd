@@ -4,24 +4,24 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-export const NavDrawer = () => {
+export const NavDrawer = ({ setSelectedComponent }) => {
   return (
     <Box sx={{ width: 250, bgcolor: "white", height: "100vh", boxShadow: 3 }}>
       <nav>
         <List>
-          <ListItemButton>
+          <ListItemButton onClick={() => setSelectedComponent('Midia')}>
             <ListItemIcon>
               <TodayIcon />
             </ListItemIcon>
             <ListItemText primary="Mi día" />
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => setSelectedComponent('Importante')}>
             <ListItemIcon>
               <StarBorderIcon />
             </ListItemIcon>
             <ListItemText primary="Importante" />
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => setSelectedComponent('Tareas')}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -32,7 +32,7 @@ export const NavDrawer = () => {
       <Divider />
       <nav>
         <List>
-          <ListItemButton>
+          <ListItemButton onClick={() => setSelectedComponent('Settings')}>
             <ListItemIcon>
               <SettingsIcon />
             </ListItemIcon>

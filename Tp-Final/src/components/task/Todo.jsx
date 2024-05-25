@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import { AddTask } from "./AddTask";
 import { TodoForm } from "./TodoForm";
 import { useState } from "react";
-import TaskComplete from "./TaskComplete";
 
 
 
@@ -25,7 +24,6 @@ export const Todo = ({ drawerOpen }) => {
     }}>
         <AddTask onAdd={addTask}></AddTask>
         <TodoForm tasks={tasks} setTasks={setTasks}></TodoForm>
-        <TaskComplete />
     </Box>
   );
 };
