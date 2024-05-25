@@ -5,10 +5,10 @@ Este Repositorio contiene proyectos, trabajos practicos de front end
 # Contenido
 
 - [Instalación](#instalación)
-- [tp1]
-- [tp2]
-- [tp3]
-- [tp4-Final]
+- [tp1](#tp1)
+- [tp2](#tp2)
+- [tp3](#tp3)
+- [tp4-Final](#tp4-final)
 
 
 ## tp1
@@ -23,7 +23,7 @@ Este Repositorio contiene proyectos, trabajos practicos de front end
 
 -El trabajo Practico numero 2: Vite + React + tailwind
 
-## tp4 Final
+## tp4-Final
 
 -El trabajo Practico numero 2: Vite + React + MaterialUI + Sonner
 
