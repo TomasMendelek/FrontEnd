@@ -6,7 +6,12 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 export const NavDrawer = ({ setSelectedComponent }) => {
   return (
-    <Box sx={{ width: 250, bgcolor: "white", height: "100vh", boxShadow: 3 }}>
+    <Box sx={{ 
+      width: { xs: 200, sm: 250 },
+      bgcolor: "white", 
+      height: "100vh", 
+      boxShadow: 3 
+    }}>
       <nav>
         <List>
           <ListItemButton onClick={() => setSelectedComponent('Midia')}>
@@ -36,7 +41,7 @@ export const NavDrawer = ({ setSelectedComponent }) => {
             <ListItemIcon>
               <SettingsIcon />
             </ListItemIcon>
-            <ListItemText primary="Settings" />
+            <ListItemText primary="Ajustes" />
           </ListItemButton>
         </List>
       </nav>

@@ -3,9 +3,8 @@ import { NavDrawer } from "./components/navbar/NavDrawer";
 import { Navbar } from "./components/navbar/Navbar";
 import { useState } from "react";
 import { Midia } from "./components/task/Midia";
-import { Importante } from "./components/importante/Importante"
 import { Tareas } from "./components/tareas/Tareas";
-import { Settings } from "./components/configuraciones/Settings";
+import { Mantenimiento } from "./components/mantenimiento/Mantenimiento"
 
 export const App = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -16,11 +15,11 @@ export const App = () => {
       case 'Midia':
         return <Midia />;
       case 'Importante':
-        return <Importante />;
+        return <Mantenimiento />;
       case 'Tareas':
-        return <Tareas />;
+        return <Mantenimiento />;
       case 'Settings':
-        return <Settings />;
+        return <Mantenimiento />;
       default:
         return <Midia />;
     }
