@@ -5,7 +5,7 @@ import { grey } from '@mui/material/colors';
 const color = grey[800];
 
 
-export const AddTask = ({ onAdd }) => {
+export const AddTask = ({ onAdd, titulo="Mi dia" }) => {
   const [task, setTask] = useState('');
 
   const handleAddTask = () => {
@@ -25,7 +25,7 @@ export const AddTask = ({ onAdd }) => {
   return (
     <>
       <Typography variant="h2" sx={{ fontSize: 36, ml: 4, color: color }}>
-        Mi día 
+        {titulo}
         </Typography>
       <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'stretch', mt: 0, ml: 2, mr: 2, mb: 2, alignItems: 'center' }}>
         <input

@@ -17,7 +17,7 @@ export const App = () => {
       case 'Importante':
         return <Mantenimiento />;
       case 'Tareas':
-        return <Mantenimiento />;
+        return <Tareas />;
       case 'Settings':
         return <Mantenimiento />;
       default:
