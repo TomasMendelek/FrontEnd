@@ -7,7 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 export const NavDrawer = ({ setSelectedComponent }) => {
   return (
     <Box sx={{ 
-      width: { xs: 200, sm: 250 },
+      width: { sm:"100%", xs:"100%", sm: 250 },
       bgcolor: "white", 
       height: "100vh", 
       boxShadow: 3 

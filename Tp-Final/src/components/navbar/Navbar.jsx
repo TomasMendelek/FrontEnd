@@ -21,10 +21,10 @@ export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
   return (
     <Toolbar component="nav" sx={{ bgcolor: 'primary.light', display: "flex", alignItems: "center", pl: 2, gap: 3, justifyContent:"space-between"}}>
       <Box sx={{display:"flex", alignItems:"center"}}>
-      <IconButton onClick={toggleDrawer} sx={{ color: "white" }}>
-        <MenuIcon sx={{ fontSize: 34, m: 1 }} />
+      <IconButton onClick={toggleDrawer} sx={{ color: "white"  }}>
+        <MenuIcon  />
       </IconButton>
-      <Typography variant="h1" sx={{ p: 2, color: "white", fontSize: 24, fontWeight: "bold" }}>To Do</Typography>
+      <Typography variant="h1" sx={{ p: 2, color: "white", fontSize:{xs: 14, sm: 16, md:24 }, fontWeight: "bold"  }}>To Do</Typography>
       </Box>
       <Search />
       <Button
