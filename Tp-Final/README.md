@@ -21,7 +21,7 @@ Este es un proyecto de lista de tareas (ToDo) desarrollado en React utilizando V
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_proyecto.git
+git clone https://github.com/tomasmendelek/frontend/tpfinal.git
 ```
 
 2. Navega al directorio Del proyecto:
