@@ -1,8 +1,10 @@
 import React from 'react';
-import { Typography, IconButton, Toolbar, Button, Menu, MenuItem, Box } from "@mui/material";
+import { Typography, IconButton, Toolbar, Button, Menu, MenuItem, Box, } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Search } from './Search';
 
+ 
 export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -16,7 +18,6 @@ export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   return (
     <Toolbar component="nav" sx={{ bgcolor: 'primary.light', display: "flex", alignItems: "center", pl: 2, gap: 3, justifyContent:"space-between"}}>
       <Box sx={{display:"flex", alignItems:"center"}}>
@@ -25,13 +26,14 @@ export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
       </IconButton>
       <Typography variant="h1" sx={{ p: 2, color: "white", fontSize: 24, fontWeight: "bold" }}>To Do</Typography>
       </Box>
+      <Search />
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-      >
+        >
         <GitHubIcon sx={{color:"white"}}></GitHubIcon>
       </Button>
       <Menu
@@ -54,6 +56,7 @@ export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
           </a>
         </MenuItem>
       </Menu>
+
     </Toolbar>
   );
 };

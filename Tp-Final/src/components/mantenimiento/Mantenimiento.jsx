@@ -32,7 +32,7 @@ export const Mantenimiento = () => {
             justifyContent: "center",
             mt: { xs: 2, sm: 2, md: 2 }
           }}>
-            <img src="./src/assets/undraw_programming_re_kg9v.svg" alt="En construcción" style={{ maxWidth: '300px', width: { xs: "100%", sm: "55%", md: "50%" } }} />
+            <img src="/undraw_programming_re_kg9v.svg" alt="En construcción" style={{ maxWidth: '300px', width: { xs: "100%", sm: "55%", md: "50%" } }} />
           </Box>
       </Box>
     </Container>
