@@ -1,11 +1,12 @@
-import { Box, IconButton, List, ListItem, Tooltip, Checkbox } from '@mui/material';
+import { Box, IconButton, List, ListItem, Tooltip, Checkbox, Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toaster, toast } from 'sonner';
+import { grey } from '@mui/material/colors';
+const color = grey[300]
 
-export const TodoForm = ({ tasks, setTasks }) => {
+export const TodoForm = ({ tasks, setTasks}) => {
   const [selectedTasks, setSelectedTasks] = useState([]);
   const audio = new Audio("./sound.mp3");
 
@@ -25,7 +26,6 @@ export const TodoForm = ({ tasks, setTasks }) => {
       prev.includes(index)
         ? prev.filter((i) => i !== index)
         : [...prev, index]
-        
     );
   };
 
@@ -34,28 +34,33 @@ export const TodoForm = ({ tasks, setTasks }) => {
 
   return (
     <>
-    <Toaster richColors position="bottom-right" />
+      <Toaster richColors position="bottom-right" />
       <Box sx={{ display: 'flex', flexDirection: "row", justifyContent: "stretch", mr: 10, ml: 5, alignItems: "center" }}>
         <List sx={{ width: "100%" }}>
           {tasks.map((task, index) => {
             if (selectedTasks.includes(index)) return null;
             return (
-              <ListItem 
-                key={index} 
-                sx={{ 
+              <ListItem
+                key={index}
+                sx={{
                   bgcolor: "white",
-                  m: 1, 
-                  borderRadius: "10px", 
-                  display: "flex", 
+                  m: 1,
+                  borderRadius: "10px",
+                  display: "flex",
                   justifyContent: "space-between",
-                  transition: "200ms"
+                  transition: "300ms",
+                  '&:hover': {
+                    bgcolor: color ,
+                    boxShadow: 0
+                  }
+    
                 }}
               >
                 <Box sx={{ alignItems: "center" }}>
-                  <Checkbox 
-                    color="success" 
-                    checked={false} 
-                    onChange={() => handleCheckboxChange(index)} 
+                  <Checkbox
+                    color="success"
+                    checked={false}
+                    onChange={() => handleCheckboxChange(index)}
                   />
                   <span>{task}</span>
                 </Box>
@@ -71,9 +76,9 @@ export const TodoForm = ({ tasks, setTasks }) => {
       </Box>
       <Box sx={{ mr: 10, ml: 5, alignItems: "center" }}>
         {tasksCompletadas.length > 0 && (
-          <Accordion sx={{  backgroundColor: '#f0f0f0', borderRadius: '8px', boxShadow: 'none', m:1 }}>
+          <Accordion sx={{ backgroundColor: '#f0f0f0', borderRadius: '8px', boxShadow: 'none', m: 1 }}>
             <AccordionSummary
-              sx={{border:"none"}}
+              sx={{ border: "none" }}
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel-content"
               id="panel-header"
@@ -121,4 +126,4 @@ export const TodoForm = ({ tasks, setTasks }) => {
       </Box>
     </>
   );
-}
+};

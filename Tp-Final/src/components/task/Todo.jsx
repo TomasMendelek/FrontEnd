@@ -3,28 +3,24 @@ import { AddTask } from "./AddTask";
 import { TodoForm } from "./TodoForm";
 import { useState } from "react";
 
-
 export const Todo = ({ drawerOpen }) => {
-  const [tasks, setTasks] = useState([]) 
+  const [tasks, setTasks] = useState([]);
 
-  
-
-  const addTask = (task) =>{
-    setTasks([...tasks, task])
-  }
-
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  };
 
   return (
     <Container maxWidth="xl">
-    <Box sx={{
-      flexGrow: 1,
-      transition: 'margin 0.3s',
-      marginLeft: drawerOpen ? '1px' : '20px',
-      padding: 2,
-    }}>
-        <AddTask onAdd={addTask}></AddTask>
-        <TodoForm tasks={tasks} setTasks={setTasks}></TodoForm>
-    </Box>
+      <Box sx={{
+        flexGrow: 1,
+        transition: 'margin 0.3s',
+        marginLeft: drawerOpen ? '1px' : '20px',
+        padding: 2,
+      }}>
+        <AddTask onAdd={addTask} tasks={tasks} />
+        <TodoForm tasks={tasks} setTasks={setTasks} />
+      </Box>
     </Container>
   );
 };
