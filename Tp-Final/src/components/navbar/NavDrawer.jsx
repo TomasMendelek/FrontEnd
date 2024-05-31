@@ -30,7 +30,7 @@ export const NavDrawer = ({ setSelectedComponent }) => {
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText primary="Tareas" />
+            <ListItemText primary="Tareas Asignadas" />
           </ListItemButton>
         </List>
       </nav>

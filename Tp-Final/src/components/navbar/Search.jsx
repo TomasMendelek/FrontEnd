@@ -36,9 +36,9 @@ export const Search = () => {
           paddingLeft: `calc(1em + ${theme.spacing(4)})`,
           transition: theme.transitions.create('width'),
           [theme.breakpoints.up('sm')]: {
-            width: '100ch',
+            width: '70ch',
             '&:focus': {
-              width: '120ch',
+              width: '90ch',
             },
           },
         },

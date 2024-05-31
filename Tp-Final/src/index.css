@@ -8,3 +8,6 @@
     border-radius:10px;
     outline: none;
 }
+body{
+    overflow-x: hidden ;
+}
