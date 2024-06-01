@@ -3,6 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useFetch } from '../../hooks/useFetch';
 import { useState, useEffect } from 'react';
 import { Toaster, toast } from 'sonner';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 export const Tareas = ({ drawerOpen, titulo }) => {
   const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
@@ -45,10 +46,11 @@ export const Tareas = ({ drawerOpen, titulo }) => {
         padding: 1,
         
       }}>
-        <Typography variant="h2" sx={{textAlign:"center", fontSize: 36, ml: 4 }}>
+        <Typography variant="h2" sx={{textAlign:"center", fontSize: 36, ml: 4, mb:5, mt:2}}>
         Tareas Asignadas
         </Typography>
-        <ul sx={{}}>
+
+        <ul >
           {error && <li>error: {error}</li>}
           {loading &&
             <Box>
@@ -92,17 +94,25 @@ export const Tareas = ({ drawerOpen, titulo }) => {
                     checked={selectedTasks.includes(index)}
                     onChange={() => handleCheckboxChange(index)}
                   />
+                  
                   <span style={{
                     textDecoration: selectedTasks.includes(index) ? 'line-through' : 'none',
                   }}>
                     {task.title}
                   </span>
                 </Box>
-                <Tooltip placement="right" title="Borrar">
-                  <IconButton onClick={() => eliminarTask(index)} color='error'>
+                <Box>
+                <Tooltip title="Importante" placement="top">
+                  <IconButton color="primary">
+                    <StarBorderIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Borrar" placement="top">
+                  <IconButton color="error" onClick={() => eliminarTask(index)}>
                     <DeleteIcon />
                   </IconButton>
                 </Tooltip>
+                </Box>
               </ListItem>
             ))
           )}
