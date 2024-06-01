@@ -4,6 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toaster, toast } from 'sonner';
 import { grey } from '@mui/material/colors';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 const color = grey[300]
 
 export const TodoForm = ({ tasks, setTasks}) => {
@@ -64,8 +65,11 @@ export const TodoForm = ({ tasks, setTasks}) => {
                   />
                   <span>{task}</span>
                 </Box>
-                <Tooltip placement="right" title="Borrar">
-                  <IconButton onClick={() => eliminarTask(index)} color='error'>
+                <Tooltip >
+                <IconButton color="info" title="Importante">
+                    <StarBorderIcon />
+                  </IconButton>
+                  <IconButton title="Borrar" onClick={() => eliminarTask(index)} color='error'>
                     <DeleteIcon />
                   </IconButton>
                 </Tooltip>
@@ -98,7 +102,8 @@ export const TodoForm = ({ tasks, setTasks}) => {
                         borderRadius: "10px", 
                         display: "flex", 
                         justifyContent: "space-between",
-                        transition: "200ms"
+                        transition: "200ms",
+                        
                       }}
                     >
                       <Box sx={{ alignItems: "center" }}>
@@ -111,11 +116,18 @@ export const TodoForm = ({ tasks, setTasks}) => {
                           {task}
                         </span>
                       </Box>
-                      <Tooltip placement="right" title="Borrar">
-                        <IconButton onClick={() => eliminarTask(index)} color='error'>
-                          <DeleteIcon />
-                        </IconButton>
-                      </Tooltip>
+                      <Box>
+                        <Tooltip title="Importante" placement="top">
+                          <IconButton color="primary">
+                            <StarBorderIcon />
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Borrar" placement="top">
+                          <IconButton color="error" onClick={() => eliminarTask(index)}>
+                            <DeleteIcon />
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
                     </ListItem>
                   );
                 })}
