@@ -51,14 +51,14 @@ export const AddTask = ({ onAdd, tasks = [] }) => {
         {taskCount > 0 && <Typography variant='h3' sx={{fontSize:"23px", color:color2}}>
           ( {taskCount} )
           </Typography>}
-          <Box sx={{display:"flex", gap:1, ml:2, alignItems:"center", borderBottom:"2px solid ", p:"3px", borderBottomColor: "primary.light"}}>
+          <Button sx={{textTransform:"none", display:"flex", gap:1, ml:2, alignItems:"center", borderBottom:"2px solid ", p:"3px", borderBottomColor: "primary.light"}}>
           <FormatListBulletedIcon sx={{color: color, fontSize: "medium"}}  />
           <Typography sx={{color:color}}>List</Typography>
-          </Box>
-          <Box sx={{display:"flex", gap:1, ml:2, alignItems:"center",}}>
+          </Button>
+          <Button sx={{textTransform:"none",display:"flex", gap:1, ml:2, alignItems:"center",}}>
           <GridOnIcon sx={{color: color, fontSize: "medium"}}  />
           <Typography sx={{color:color}}>Grid</Typography>
-          </Box>
+          </Button>
       </Box>
       <Box sx={{display:"flex", gap:1}}>
         <Button sx={{display:"flex", alignItems:"center", color: color}}>
