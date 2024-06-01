@@ -38,7 +38,7 @@ export const App = () => {
   return (
     <>
       <Navbar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-      <Box sx={{ display: "flex", bgcolor: "#eeeeee", height: "100vh" }}>
+      <Box sx={{ display: "flex", bgcolor: "#eeeeee", minHeight:"90vh"  }}>
         {drawerOpen && <NavDrawer setSelectedComponent={handleSetSelectedComponent} />}
         {renderSelectedComponent()}
       </Box>
