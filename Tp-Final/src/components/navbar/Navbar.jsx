@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, IconButton, Toolbar, Button, Menu, MenuItem, Box, } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Search } from './Search';
 
- 
+
 export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

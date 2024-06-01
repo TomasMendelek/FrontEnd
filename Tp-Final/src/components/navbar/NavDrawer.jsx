@@ -9,8 +9,8 @@ export const NavDrawer = ({ setSelectedComponent }) => {
     <Box sx={{ 
       width: { sm:"100%", xs:"100%", sm: 250 },
       bgcolor: "white", 
-      height: "100vh", 
-      boxShadow: 3 
+      minHeight: "80vh", 
+      boxShadow: 3 ,
     }}>
       <nav>
         <List>
