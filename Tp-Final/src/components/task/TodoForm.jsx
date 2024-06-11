@@ -5,20 +5,21 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toaster, toast } from 'sonner';
 import { grey } from '@mui/material/colors';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarIcon from '@mui/icons-material/Star';  // Importa StarIcon
+import StarIcon from '@mui/icons-material/Star';
+
 
 const color = grey[300];
 
 export const TodoForm = ({ tasks, setTasks }) => {
   const [selectedTasks, setSelectedTasks] = useState([]);
-  const [importantTasks, setImportantTasks] = useState([]);  // Estado para tareas importantes
+  const [importantTasks, setImportantTasks] = useState([]);
   const audio = new Audio("./sound.mp3");
 
   const eliminarTask = (index) => {
     const taskEliminado = tasks.filter((task, i) => i !== index);
     setTasks(taskEliminado);
     setSelectedTasks(selectedTasks.filter((i) => i !== index));
-    setImportantTasks(importantTasks.filter((i) => i !== index));  // Elimina la tarea del estado de importantes
+    setImportantTasks(importantTasks.filter((i) => i !== index));
     toast.error("Tarea eliminada");
   };
 

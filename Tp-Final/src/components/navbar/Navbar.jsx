@@ -5,6 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { Search } from './Search';
 
 
+
 export const Navbar = ({ drawerOpen, setDrawerOpen }) => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);

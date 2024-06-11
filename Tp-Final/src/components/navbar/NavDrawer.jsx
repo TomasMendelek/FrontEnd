@@ -3,11 +3,13 @@ import TodayIcon from '@mui/icons-material/Today';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
+import React from 'react';
+
 
 export const NavDrawer = ({ setSelectedComponent }) => {
   return (
     <Box sx={{ 
-      width: { sm:"100%", xs:"100%", sm: 250 },
+      width: { xs:"100%", sm: 260 },
       bgcolor: "white", 
       minHeight: "80vh", 
       boxShadow: 3 ,

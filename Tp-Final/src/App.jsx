@@ -1,10 +1,11 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { NavDrawer } from "./components/navbar/NavDrawer";
 import { Navbar } from "./components/navbar/Navbar";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Midia } from "./components/task/Midia";
 import { Tareas } from "./components/tareas/Tareas";
 import { Mantenimiento } from "./components/mantenimiento/Mantenimiento";
+
 
 export const App = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -38,7 +39,7 @@ export const App = () => {
   return (
     <>
       <Navbar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-      <Box sx={{ display: "flex", bgcolor: "#eeeeee", minHeight:"90vh"  }}>
+      <Box sx={{ display: "flex", bgcolor: "#eeeeee", minHeight:"95vh",  }}>
         {drawerOpen && <NavDrawer setSelectedComponent={handleSetSelectedComponent} />}
         {renderSelectedComponent()}
       </Box>
