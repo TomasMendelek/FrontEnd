@@ -5,22 +5,31 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toaster, toast } from 'sonner';
 import { grey } from '@mui/material/colors';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { Favorite } from '@mui/icons-material';
+import StarIcon from '@mui/icons-material/Star';  // Importa StarIcon
 
 const color = grey[300];
 
 export const TodoForm = ({ tasks, setTasks }) => {
   const [selectedTasks, setSelectedTasks] = useState([]);
+  const [importantTasks, setImportantTasks] = useState([]);  // Estado para tareas importantes
   const audio = new Audio("./sound.mp3");
 
   const eliminarTask = (index) => {
     const taskEliminado = tasks.filter((task, i) => i !== index);
     setTasks(taskEliminado);
     setSelectedTasks(selectedTasks.filter((i) => i !== index));
+    setImportantTasks(importantTasks.filter((i) => i !== index));  // Elimina la tarea del estado de importantes
     toast.error("Tarea eliminada");
   };
+
   const favoriteTask = (index) => {
-    toast.info("Tarea asignada como Importante");
+    if (importantTasks.includes(index)) {
+      setImportantTasks(importantTasks.filter((i) => i !== index));
+      toast.info("Tarea desmarcada como Importante");
+    } else {
+      setImportantTasks([...importantTasks, index]);
+      toast.info("Tarea asignada como Importante");
+    }
   };
 
   const handleCheckboxChange = (index) => {
@@ -70,17 +79,17 @@ export const TodoForm = ({ tasks, setTasks }) => {
                   <span>{task}</span>
                 </Box>
                 <Box>
-                        <Tooltip title="Importante" placement="top">
-                          <IconButton color="primary" onClick={() => favoriteTask(index)} >
-                            <StarBorderIcon />
-                          </IconButton>
-                        </Tooltip>
-                        <Tooltip title="Borrar" placement="top">
-                          <IconButton color="error" onClick={() => eliminarTask(index)}>
-                            <DeleteIcon />
-                          </IconButton>
-                        </Tooltip>
-                      </Box>
+                  <Tooltip title="Importante" placement="top">
+                    <IconButton color="primary" onClick={() => favoriteTask(index)} >
+                      {importantTasks.includes(index) ? <StarIcon /> : <StarBorderIcon />}
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Borrar" placement="top">
+                    <IconButton color="error" onClick={() => eliminarTask(index)}>
+                      <DeleteIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Box>
               </ListItem>
             );
           })}
@@ -126,7 +135,7 @@ export const TodoForm = ({ tasks, setTasks }) => {
                       <Box>
                         <Tooltip title="Importante" placement="top">
                           <IconButton color="primary" onClick={() => favoriteTask(index)} >
-                            <StarBorderIcon />
+                            {importantTasks.includes(index) ? <StarIcon /> : <StarBorderIcon />}
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="Borrar" placement="top">

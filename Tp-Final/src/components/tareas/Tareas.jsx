@@ -4,12 +4,14 @@ import { useFetch } from '../../hooks/useFetch';
 import { useState, useEffect } from 'react';
 import { Toaster, toast } from 'sonner';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 export const Tareas = ({ drawerOpen, titulo }) => {
   const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/todos");
   const [selectedTasks, setSelectedTasks] = useState([]);
   const [taskList, setTaskList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [importantTasks, setImportantTasks] = useState ([])
 
   const audio = new Audio("./sound.mp3");
 
@@ -41,6 +43,16 @@ export const Tareas = ({ drawerOpen, titulo }) => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
+  const favoriteTask = (index) => {
+    if (importantTasks.includes(index)) {
+      setImportantTasks(importantTasks.filter((i) => i !== index));
+      toast.info("Tarea desmarcada como Importante");
+    } else {
+      setImportantTasks([...importantTasks, index]);
+      toast.info("Tarea asignada como Importante");
+    }
+  };
+
 
   const filteredTasks = taskList.filter(task =>
     task.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -130,8 +142,8 @@ export const Tareas = ({ drawerOpen, titulo }) => {
                 </Box>
                 <Box>
                   <Tooltip title="Importante" placement="top">
-                    <IconButton color="primary">
-                      <StarBorderIcon />
+                    <IconButton color="primary" onClick={() => favoriteTask(index)}>
+                    {importantTasks.includes(index) ? <StarIcon /> : <StarBorderIcon />}
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Borrar" placement="top">
