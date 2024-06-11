@@ -5,9 +5,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toaster, toast } from 'sonner';
 import { grey } from '@mui/material/colors';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-const color = grey[300]
+import { Favorite } from '@mui/icons-material';
 
-export const TodoForm = ({ tasks, setTasks}) => {
+const color = grey[300];
+
+export const TodoForm = ({ tasks, setTasks }) => {
   const [selectedTasks, setSelectedTasks] = useState([]);
   const audio = new Audio("./sound.mp3");
 
@@ -17,11 +19,14 @@ export const TodoForm = ({ tasks, setTasks}) => {
     setSelectedTasks(selectedTasks.filter((i) => i !== index));
     toast.error("Tarea eliminada");
   };
+  const favoriteTask = (index) => {
+    toast.info("Tarea asignada como Importante");
+  };
 
   const handleCheckboxChange = (index) => {
     if (!selectedTasks.includes(index)) {
       audio.play();
-      toast.success("Tarea Completada")
+      toast.success("Tarea Completada");
     }
     setSelectedTasks((prev) =>
       prev.includes(index)
@@ -35,7 +40,7 @@ export const TodoForm = ({ tasks, setTasks}) => {
 
   return (
     <>
-      <Toaster richColors position="bottom-right" />
+      <Toaster closeButton richColors position="bottom-right" />
       <Box sx={{ display: 'flex', flexDirection: "row", justifyContent: "stretch", mr: 10, ml: 5, alignItems: "center" }}>
         <List sx={{ width: "100%" }}>
           {tasks.map((task, index) => {
@@ -51,10 +56,9 @@ export const TodoForm = ({ tasks, setTasks}) => {
                   justifyContent: "space-between",
                   transition: "300ms",
                   '&:hover': {
-                    bgcolor: color ,
+                    bgcolor: color,
                     boxShadow: 0
                   }
-    
                 }}
               >
                 <Box sx={{ alignItems: "center" }}>
@@ -65,14 +69,18 @@ export const TodoForm = ({ tasks, setTasks}) => {
                   />
                   <span>{task}</span>
                 </Box>
-                <Tooltip >
-                <IconButton color="info" title="Importante">
-                    <StarBorderIcon />
-                  </IconButton>
-                  <IconButton title="Borrar" onClick={() => eliminarTask(index)} color='error'>
-                    <DeleteIcon />
-                  </IconButton>
-                </Tooltip>
+                <Box>
+                        <Tooltip title="Importante" placement="top">
+                          <IconButton color="primary" onClick={() => favoriteTask(index)} >
+                            <StarBorderIcon />
+                          </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Borrar" placement="top">
+                          <IconButton color="error" onClick={() => eliminarTask(index)}>
+                            <DeleteIcon />
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
               </ListItem>
             );
           })}
@@ -89,28 +97,27 @@ export const TodoForm = ({ tasks, setTasks}) => {
             >
               <Typography>Completadas </Typography>
             </AccordionSummary>
-            <AccordionDetails sx={{border:"none"}}>
+            <AccordionDetails sx={{ border: "none" }}>
               <List>
                 {tasks.map((task, index) => {
                   if (!selectedTasks.includes(index)) return null;
                   return (
-                    <ListItem 
-                      key={index} 
-                      sx={{ 
+                    <ListItem
+                      key={index}
+                      sx={{
                         bgcolor: "lightgray",
-                        m: 1, 
-                        borderRadius: "10px", 
-                        display: "flex", 
+                        m: 1,
+                        borderRadius: "10px",
+                        display: "flex",
                         justifyContent: "space-between",
                         transition: "200ms",
-                        
                       }}
                     >
                       <Box sx={{ alignItems: "center" }}>
-                        <Checkbox 
-                          color="success" 
-                          checked={true} 
-                          onChange={() => handleCheckboxChange(index)} 
+                        <Checkbox
+                          color="success"
+                          checked={true}
+                          onChange={() => handleCheckboxChange(index)}
                         />
                         <span style={{ textDecoration: 'line-through' }}>
                           {task}
@@ -118,7 +125,7 @@ export const TodoForm = ({ tasks, setTasks}) => {
                       </Box>
                       <Box>
                         <Tooltip title="Importante" placement="top">
-                          <IconButton color="primary">
+                          <IconButton color="primary" onClick={() => favoriteTask(index)} >
                             <StarBorderIcon />
                           </IconButton>
                         </Tooltip>
